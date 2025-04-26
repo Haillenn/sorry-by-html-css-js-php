@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Xin Lỗi</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .heart {
+            color: red;
+            font-size: 2rem;
+            animation: fall 3s linear infinite;
+            position: absolute;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-100px); opacity: 1; }
+            100% { transform: translateY(800px); opacity: 0; }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
+
+        h1 {
+            color: blueviolet;
+            font-weight: 600;
+            animation: shake 1.5s ease-in-out infinite;
+        }
+
+        p {
+            color: blueviolet;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .btn-agree {
+            background-color: red;
+            color: white;
+            font-weight: 600;
+        }
+
+        .btn-lock {
+            background-color: pink;
+            color: black;
+            font-weight: 600;
+        }
+
+        body {
+            background-color: pink;
+        }
+
+        /* Cây thông Noel */
+        .christmas-tree {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .tree-level {
+            display: flex;
+            justify-content: center;
+        }
+
+        .tree-level div {
+            width: 20px;
+            height: 20px;
+            background-color: green;
+            margin: 2px;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+
+        .tree-trunk {
+            width: 40px;
+            height: 20px;
+            background-color: brown;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Xin lỗi emmmm!</h1>
+    <p>Lần sau anh sẽ không vạ miệng như vậy nữa cho anh xin lỗi nhó nhó nhó</p>
+    <p>Anh mong em đừng suy nghĩ, em chả nợ gì hết ý, chỉ có anh nợ em thôi! ':((('</p>
+    <p>Ý là nhiều lần làm việc tốt cũng không thể bằng 1 lỗi sai ý, nên là phải xin lỗi em thật chân thành ':((('</p>
+    <button id="btn-open-modal" class="btn btn-primary">CLick vào đây</button>
+    <button id="btn-bimat" class="btn btn-primary">Xem bí mật</button>
+    <!-- Hình ảnh sẽ hiển thị khi click -->
+    <div id="image-container" style="display: none; text-align: center; margin-top: 20px;">
+        <img id="apology-image" src="./uploads/cute.jpg" alt="Ảnh xin lỗi" style="max-width: 100%; height: auto; border: 2px solid black;">
+    </div>
+    <div class="christmas-tree">
+        <div class="tree-level">
+            <div></div>
+        </div>
+        <div class="tree-level">
+            <div></div><div></div>
+        </div>
+        <div class="tree-level">
+            <div></div><div></div><div></div>
+        </div>
+        <div class="tree-level">
+            <div></div><div></div><div></div><div></div>
+        </div>
+        <div class="tree-trunk"></div>
+    </div>
+    <!-- Modal Bí mật -->
+    <div class="modal fade" id="bimatModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Bí Mật Lớn</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Bí mật này chỉ dành cho người đặc biệt nhất thôi! 😊
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Thích</th>
+                                <th>Không thích</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Kem</td>
+                                <td>Không ăn hành</td>
+                            </tr>
+                            <tr>
+                                <td>Mỳ cay</td>
+                                <td>Không ăn mắm tôm</td>
+                            </tr>
+                            <tr>
+                                <td>xem doraemon</td>
+                                <td>Dị ứng hải sản</td>
+                            </tr>
+                            <tr>
+                                <td>thích cảnh đẹp, chill gơ</td>
+                                <td>dị ứng rượu bia</td>
+                            </tr>                           <tr>
+                                <td>màu xanh (blueeee)</td>
+                                <td>Không ăn sầu riêng, ...</td>
+                            </tr>
+                            <tr>
+                                <td>cũng mê matcha</td>
+                                <td>Không ăn chân gà</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>thông tin</th>
+                                <th>Nội dung</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Son</td>
+                                <td>Romand 23, 24</td>
+                            </tr>
+                            <tr>
+                                <td>Địa chỉ</td>
+                                <td>Số x, ngõ y,...</td>
+                            </tr>
+                            <tr>
+                                <td>tiểu sử</td>
+                                <td>Sinh thiếu tháng</td>
+                            </tr>
+                            <tr>
+                                <td>Sức khỏe</td>
+                                <td>Ít ốm</td>
+                            </tr>                           <tr>
+                                <td>Hoạt động</td>
+                                <td>thích đi chơi, đi dạo</td>
+                            </tr>
+                            <tr>
+                                <td>đặc biệt</td>
+                                <td>sợ nợ </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="apologyModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" >Lời Xin Lỗi</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="font-weight: bold;">
+                    Tha lỗi cho anh nhó, năn nỉ á
+                </div>
+                <div class="modal-footer">
+                    <button id="btn-agree" class="btn btn-primary">tạm tha</button>
+                    <button id="btn-lock" class="btn btn-primary">lần sau mà dám cho ăn lóc</button>
+                    <button id="btn-disagree" class="btn btn-primary">Không thaaaaaa</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="cameraModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Chụp Ảnh Xinh Đẹp</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <video id="camera" autoplay playsinline style="width: 100%;"></video>
+                    <canvas id="snapshot" style="display: none;"></canvas>
+                </div>
+                <div class="modal-footer">
+                    <button id="btn-capture" class="btn btn-primary">Chụp Ảnh</button>
+                    <button id="btn-save" class="btn btn-success" style="display: none;">Gửi Ảnh</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hearts Container -->
+    <div id="hearts-container"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+           document.addEventListener('DOMContentLoaded', () => {
+            const heartsContainer = document.getElementById('hearts-container');
+            const modal = new bootstrap.Modal(document.getElementById('apologyModal'));
+            const cameraModal = new bootstrap.Modal(document.getElementById('cameraModal'));
+            const disagreeButton = document.getElementById('btn-disagree');
+            const video = document.getElementById('camera');
+            const canvas = document.getElementById('snapshot');
+            const captureButton = document.getElementById('btn-capture');
+            const saveButton = document.getElementById('btn-save');
+            const lockButton = document.getElementById('btn-lock');
+
+            // Open modal when button clicked
+            document.getElementById('btn-open-modal').addEventListener('click', () => {
+                modal.show();
+            });
+
+            const imageContainer = document.getElementById('image-container');
+
+            // Thêm sự kiện click vào nút btn-lock
+            lockButton.addEventListener('click', () => {
+                modal.hide(); 
+                imageContainer.style.display = 'block'; // Hiển thị hình ảnh
+            });
+
+            // Agree button logic
+            document.getElementById('btn-agree').addEventListener('click', async () => {
+                modal.hide();
+                for (let i = 0; i < 20; i++) {
+                    createHeart();
+                }
+                await new Promise(resolve => setTimeout(resolve, 3000)); // Wait for hearts to finish
+                openCamera();
+            });
+
+            // Disagree button logic
+            disagreeButton.addEventListener('click', () => {
+                const x = Math.random() * (window.innerWidth - disagreeButton.offsetWidth);
+                const y = Math.random() * (window.innerHeight - disagreeButton.offsetHeight);
+                disagreeButton.style.position = 'absolute';
+                disagreeButton.style.left = `${x}px`;
+                disagreeButton.style.top = `${y}px`;
+                disagreeButton.textContent = 'Tha lỗi đi mà!';
+            });
+
+            // Function to create falling hearts
+            function createHeart() {
+                const heart = document.createElement('div');
+                heart.textContent = '❤️';
+                heart.className = 'heart';
+                heart.style.left = Math.random() * window.innerWidth + 'px';
+                heartsContainer.appendChild(heart);
+
+                setTimeout(() => heart.remove(), 1000);
+            }
+
+            // Open camera
+            async function openCamera() {
+                cameraModal.show();
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                video.srcObject = stream;
+            }
+
+            // Capture photo
+            captureButton.addEventListener('click', () => {
+                const context = canvas.getContext('2d');
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+                context.drawImage(video, 0, 0, canvas.width, canvas.height);
+                saveButton.style.display = 'block';
+                canvas.style.display = 'block';
+                video.style.display = 'none';
+                captureButton.style.display = 'none';
+            });
+
+            // Save photo
+            saveButton.addEventListener('click', () => {
+                const link = document.createElement('a');
+                link.download = 'beautiful_photo.png';
+                link.href = canvas.toDataURL();
+                link.click();
+                cameraModal.hide();
+                alert('Ảnh đã được gửi đến TH!');
+            });
+            saveButton.addEventListener('click', () => {
+    canvas.toBlob((blob) => {
+        const formData = new FormData();
+        formData.append('file', blob, 'beautiful_photo.png');
+
+        fetch('upload.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            cameraModal.hide();
+            alert(data); // Hiển thị thông báo từ server
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Có lỗi xảy ra khi gửi ảnh.');
+        });
+    }, 'image/png');
+});
+        });
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const bimatModal = new bootstrap.Modal(document.getElementById('bimatModal'));
+
+            document.getElementById('btn-bimat').addEventListener('click', () => {
+                bimatModal.show();
+            });
+        });
+    </script>
+</body>
+</html>
